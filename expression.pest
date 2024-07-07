@@ -1,0 +1,10 @@
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+
+integer = { "-"? ~ ASCII_DIGIT+ }
+ident = { ASCII_ALPHA+ }
+
+add = { expr ~ "+" ~ expr }
+mul = { expr ~ "*" ~ expr }
+expr = _{ add | mul | ident | integer }
+
+EOI = _{ ![_] }

@@ -34,4 +34,16 @@ impl Node {
     }
 }
 
-pub struct ArithmeticCircuit {}
+pub struct ArithmeticCircuit {
+    root: Node,
+}
+
+impl ArithmeticCircuit {
+    pub fn new(root: Node) -> Self {
+        Self { root }
+    }
+
+    pub fn from_expr(expr: &str) -> Self {
+        todo!()
+    }
+}
