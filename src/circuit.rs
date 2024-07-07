@@ -46,4 +46,13 @@ impl ArithmeticCircuit {
     pub fn from_expr(expr: &str) -> Self {
         todo!()
     }
+
+    pub fn evaluate(&mut self, inputs: &[(&str, i32)]) -> i32 {
+        let input_map: HashMap<String, i32> = inputs
+            .iter()
+            .cloned()
+            .map(|(k, v)| (k.to_string(), v))
+            .collect();
+        self.root.evaluate(&input_map)
+    }
 }
